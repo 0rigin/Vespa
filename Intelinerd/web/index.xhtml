@@ -3,31 +3,145 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-    <h:head>        
-        <link  rel="stylesheet" type="text/css" href="css/buscador.css" />
-        <title>Intelinerd</title>
+    <h:head>
+        <link  rel="stylesheet" type="text/css" href="css/style.css"/>
+        <title>Nuevo Diseño</title>
     </h:head>
     <h:body>
-        <p:layout fullPage="true"  >
-             
-            <p:layoutUnit position="center">
-                <img src="Images/Loading.jpg" width="100%" height="100%"/>
-            </p:layoutUnit>
-            <p:layoutUnit position="south">
-                <div align="right">
-                    <form class="form-wrapper">
-                        <input type="text" id="search" placeholder="Search Intelinerd..." required="true" />
-                        <input type="submit" value="go" id="submit"/>
-                        
-                    </form>
-                    <form>
-                        <h:commandLink action="test2.xhtml" value="Nueva Version"></h:commandLink>
+        <div id="wrapper">
+        <div id="header">
+             <img src="images/Loading.jpg" width="100%" height="100%"/>
+        </div>
+        <div id="navigation">
+           <h:form>  
+   <p:menubar style="height: 100%">  
+        
+       <p:submenu label="Televisiones" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="LCD" url="#"/>  
+                <p:menuitem value="LED" url="#"/>
+                <p:menuitem value="Plasma" url="#"/>
+            </p:submenu>
+           <p:menuitem value="Informacion General" url="#"/>
+        </p:submenu>  
+         
+       <p:submenu label="Celulares" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="Basicos" url="#"/>  
+                <p:menuitem value="Smartphones" url="#"/>
+            </p:submenu>  
+           <p:menuitem value="Informacion General" url="#"/>  
+        </p:submenu>  
+        
+        <p:submenu label="Laptops" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="Netbooks" url="#"/>  
+                <p:menuitem value="Laptops" url="#"/>
+                <p:menuitem value="Ultrabooks" url="#"/>
+            </p:submenu>  
+            <p:menuitem value="Informacion General" url="#"/>
+        </p:submenu>  
+       
+       <p:submenu label="Computadoras" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="Escritorio" url="#"/>  
+                <p:menuitem value="Todo en Uno" url="#"/>
+            </p:submenu>  
+           <p:menuitem value="Informacion General" url="#"/>
+        </p:submenu>  
+       
+       <p:submenu label="Tablets" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="Android" url="#"/>  
+                <p:menuitem value="iOS" url="#"/>
+            </p:submenu>  
+           <p:menuitem value="Informacion General" url="#"/>
+        </p:submenu>    
+       
+       <p:submenu label="Sobre Intelinerd" icon="ui-icon-document">  
+            <p:submenu label="Tipos" icon="ui-icon-contact">  
+                <p:menuitem value="Android" url="#"/>  
+                <p:menuitem value="iOS" url="#"/>
+            </p:submenu>  
+           <p:menuitem value="Afiliados" url="#"/>
+           <p:menuitem value="Contacto" url="#"/>
+        </p:submenu> 
+       
+   </p:menubar>  
     
-                    </form>
-                </div>
-            </p:layoutUnit>
+           
+           
+           </h:form>
+        </div>
+  
+            <div id="leftcolumn">
+                
+<h:form>
+    <p:slideMenu style="width: auto; height: fit-content">  
+        <p:submenu label="PC" icon="ui-icon-refresh">  
+            <p:menuitem value="Escolares" icon="ui-icon-disk" />  
+            <p:menuitem value="Profesionales" icon="ui-icon-arrowrefresh-1-w" />  
+        </p:submenu>  
+        <p:submenu label="Laptop" icon="ui-icon-newwin">  
+            <p:menuitem value="Delete" icon="ui-icon-close"/>  
+        </p:submenu>  
+        <p:separator />  
+        <p:submenu label="Menu" icon="ui-icon-extlink">  
+            <p:submenu label="Prime Links">  
+                <p:menuitem value="Prime" url="http://www.prime.com.tr" />  
+                <p:menuitem value="PrimeFaces" url="http://www.primefaces.org" />  
+            </p:submenu>  
+            <p:menuitem value="Mobile"/>  
+        </p:submenu>  
+    </p:slideMenu>  
+</h:form>       
+     </div>
+        <div id="content">
+            <p>Nuestras Promociones</p>
+    <p>
+    <p:tabView id="tabView" effect="slide">  
+  
+          
+    <p:tab title="Televisiones">  
+     <p:galleria value="#{galleriaBean.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+    <p:graphicImage value="/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+</p:galleria>  
+    </p:tab>  
+  
+    <p:tab title="Celulares">  
+      <p:galleria value="#{galleriaBean.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+    <p:graphicImage value="/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+</p:galleria>  
+    </p:tab>  
+  
+    <p:tab title="Tablets">  
+        <p:galleria value="#{galleriaBean.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+    <p:graphicImage value="/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+</p:galleria>  
+    </p:tab>  
+  
+    <p:tab title="Laptops">  
+        <p:galleria value="#{galleriaBean.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+    <p:graphicImage value="/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+</p:galleria>  
+    </p:tab>              
+                
+    <p:tab title="Computadoras">  
+        <p:galleria value="#{galleriaBean.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+    <p:graphicImage value="/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+</p:galleria>  
+    </p:tab>              
+      
+</p:tabView>  
+        </p>
+        </div>
+        
             
-        </p:layout>
+     <div id="footer">
+ 
+        </div>
+    
+    </div>
     </h:body>
 </html>
 
